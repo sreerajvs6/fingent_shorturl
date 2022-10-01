@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\ShortUrl;
 use Illuminate\Http\Request;
 use App\Lib\Generate;
+use App\Traits\Base62EncodingTrait;
 
 class URLShortnerController extends Controller
 {
+    use Base62EncodingTrait;
+
     public function index()
     {
         return view('shorturl');
@@ -26,8 +29,8 @@ class URLShortnerController extends Controller
         if(empty($urlexist))
         {
 
-        $generate = new Generate();
-        $short_url = $generate->base62encode();
+        //$generate = new Generate();
+        $short_url = $this->base62encode();
         $short_url = 'http://fing.tny/'.$short_url;
 
         $newurl = new ShortUrl();
