@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\ShortUrl;
 use Illuminate\Http\Request;
 use App\Lib\Generate;
-use Dotenv\Validator;
 
 class URLShortnerController extends Controller
 {
