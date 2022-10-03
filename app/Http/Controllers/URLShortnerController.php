@@ -30,7 +30,6 @@ class URLShortnerController extends Controller
 
         $short_url = $this->base62encode();
         $short_url = 'http://fing.tny/'.$short_url;
-
         $newurl = new ShortUrl();
         $newurl->long_url= $long_url;
         $newurl->short_url= $short_url;
